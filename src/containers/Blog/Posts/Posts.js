@@ -9,7 +9,7 @@ import FullPost from '../FullPost/FullPost';
 class Posts extends Component {
     state = {
         posts: []
-    }
+    };
 
     componentDidMount () {
         console.log( this.props );
@@ -34,7 +34,7 @@ class Posts extends Component {
     postSelectedHandler = ( id ) => {
         // this.props.history.push({pathname: '/posts/' + id});
         this.props.history.push( '/posts/' + id );
-    }
+    };
 
     render () {
         let posts = <p style={{ textAlign: 'center' }}>Something went wrong!</p>;

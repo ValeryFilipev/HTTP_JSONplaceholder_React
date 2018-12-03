@@ -6,7 +6,7 @@ import './FullPost.css';
 class FullPost extends Component {
     state = {
         loadedPost: null
-    }
+    };
 
     componentDidMount () {
         console.log(this.props);
@@ -19,7 +19,8 @@ class FullPost extends Component {
 
     loadData () {
         if ( this.props.match.params.id ) {
-            if ( !this.state.loadedPost || (this.state.loadedPost && this.state.loadedPost.id !== +this.props.match.params.id) ) {
+            if ( !this.state.loadedPost ||
+              (this.state.loadedPost && this.state.loadedPost.id !== +this.props.match.params.id) ) {
                 axios.get( '/posts/' + this.props.match.params.id )
                     .then( response => {
                         // console.log(response);
@@ -34,7 +35,7 @@ class FullPost extends Component {
             .then(response => {
                 console.log(response);
             });
-    }
+    };
 
     render () {
         let post = <p style={{ textAlign: 'center' }}>Please select a Post!</p>;
