@@ -7,24 +7,24 @@ class NewPost extends Component {
     state = {
         title: '',
         content: '',
-        author: 'Valery'
-    };
-    
-    componentDidMount() {
-      console.log(this.props);
+        author: 'Max'
     }
-  
-  postDataHandler = () => {
-      const post = {
-        title: this.state.title,
-        body: this.state.content,
-        author: this.state.author
-      };
-      axios.post('/posts/', post)
-        .then(response => {
-          console.log(response);
-        })
-    };
+
+    componentDidMount () {
+        console.log(this.props);
+    }
+
+    postDataHandler = () => {
+        const data = {
+            title: this.state.title,
+            body: this.state.content,
+            author: this.state.author
+        };
+        axios.post('/posts', data)
+            .then(response => {
+                console.log(response);
+            });
+    }
 
     render () {
         return (
